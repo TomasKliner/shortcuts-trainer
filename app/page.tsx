@@ -1,10 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 
 export default function Home() {
+
+  // useEffect(()=>{
+  //   let data = [];
+  //   fetch("https://github.com/codebling/vs-code-default-keybindings/blob/master/linux.negative.keybindings.json")
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data))
+  //   .catch(e=>console.error(e))
+  // }, [])
   type TaskData = {
     task: string;
     keyCombination: string;
@@ -21,10 +29,6 @@ export default function Home() {
     return arr;
   }
 
-  console.log(data[0].keyCombination);
-  console.log(
-    convertKeyCombinationToArray(data[0].keyCombination).map((x) => "ar" + x)
-  );
 
   const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n}`);
   return (
