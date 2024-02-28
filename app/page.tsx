@@ -34,12 +34,10 @@ export default function Home() {
   return (
     <div className="dark flex w-full min-h-screen bg-neutral-800">
       <section id="sidebar" className="w-64 bg-neutral-600 rounded-r-xl p-4">
-        <h1
-          className="text-white font-black drop-shadow bg-neutral-800 p-4 rounded-xl text-center
-          "
-        >
+        <h1 className="text-white font-black drop-shadow bg-neutral-800 p-4 rounded-xl text-center">
           SHORTCUTS TRAINER
         </h1>
+
       </section>
       <main id="editor" className="flex-grow h-full flex flex-col">
         <div
@@ -57,10 +55,10 @@ export default function Home() {
               <div className="flex flex-wrap items-center">
                 {convertKeyCombinationToArray(data[0].keyCombination).map(
                   (x) => {
-                    return <kbd className="kbd kbd-md" data-theme="dark">{x}</kbd>;
+                    return <kbd key={x} className="kbd kbd-md" data-theme="dark">{x}</kbd>;
                   }
                 )}
-                {}
+                { }
               </div>
             </div>
           </div>
